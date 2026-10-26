@@ -33,14 +33,14 @@
    - Success metrics
    - Common mistakes to avoid
 
-4. **advanced_de_concepts/01_data_modeling.md** (4,500 words)
+4. **data_engineering/concepts/01_data_modeling.md** (4,500 words)
    - 3 levels of data modeling explained
    - Normalization vs denormalization (deep dive)
    - When to normalize vs denormalize
    - 2 detailed FAANG interview questions with solutions
    - Practice exercise at the end
 
-5. **advanced_de_concepts/02_indexing_partitioning.md** (5,000 words)
+5. **data_engineering/concepts/02_indexing_partitioning.md** (5,000 words)
    - Index types (primary, secondary, composite, unique)
    - When to add/avoid indexes
    - EXPLAIN plans explained
@@ -49,7 +49,7 @@
    - Practice exercise with 500M row scenario
 
 ### Interview Content (1 file)
-6. **faang_interview_questions/solutions.md** (12,000 words)
+6. **python/interview_questions/solutions.md** (12,000 words)
    - 10 detailed FAANG-style questions
    - Complete solutions with code
    - Real-world scenarios
@@ -61,7 +61,7 @@
      - Database Design (3 Qs)
 
 ### Project Files (2 files)
-7. **projects/01_etl_pipeline/README.md** (2,000 words)
+7. **data_engineering/etl/01_etl_pipeline/README.md** (2,000 words)
    - Business context
    - Learning objectives
    - Step-by-step setup
@@ -69,7 +69,7 @@
    - Testing checklist
    - Bonus challenges
 
-8. **projects/01_etl_pipeline/starter/etl_pipeline.py** (300 lines)
+8. **data_engineering/etl/01_etl_pipeline/starter/etl_pipeline.py** (300 lines)
    - Complete skeleton with 9 TODO sections
    - Import statements
    - Function signatures
@@ -77,7 +77,7 @@
    - Main orchestration logic structure
 
 ### Data Generation (1 file)
-9. **datasets/generate_ecommerce_data.py** (150 lines)
+9. **data_engineering/data_generation/generate_ecommerce_data.py** (150 lines)
    - Generate realistic e-commerce data
    - Creates 3 CSV files (users, products, orders)
    - Configurable scale (--users, --products, --orders)
@@ -85,13 +85,13 @@
    - Command-line interface
 
 ### Schema Files (2 files)
-10. **sql/schema_mysql.sql** (25 lines)
+10. **sql/schemas/schema_mysql.sql** (25 lines)
     - Creates users, products, orders tables
     - Proper data types and constraints
     - Indexes for performance
     - Foreign keys for relationships
 
-11. **sql/schema_mssql.sql** (25 lines)
+11. **sql/schemas/schema_mssql.sql** (25 lines)
     - SQL Server equivalent schema
     - Uses SQL Server-specific types (BIGINT IDENTITY, DATETIME2)
     - Same logical structure as MySQL
@@ -100,22 +100,22 @@
 
 ## 📁 New Directories Created (5 total)
 
-1. **advanced_de_concepts/** — Core concept guides
+1. **data_engineering/concepts/** — Core concept guides
    - For learning fundamental DE concepts
    - Progressive difficulty
    - FAANG question examples in each guide
 
-2. **faang_interview_questions/** — Interview preparation
+2. **python/interview_questions/** — Interview preparation
    - Detailed questions and solutions
    - Organized by category
    - Production-ready code examples
 
-3. **projects/** — Hands-on learning projects
+3. **data_engineering/etl/** — Hands-on learning projects
    - Project 1 complete (ETL pipeline)
    - Project 2, 3 structure ready (TODO)
    - Each has README, starter, solution folders
 
-4. **datasets/** — Sample data generation
+4. **data_engineering/data_generation/** — Sample data generation
    - Scripts to generate realistic datasets
    - Multiple scales (1K to 100K+ rows)
    - Used by projects for practice
@@ -163,7 +163,7 @@
 
 ### Week 2 (6-8 hours)
 - [x] Generate sample data using generate_ecommerce_data.py
-- [x] Read projects/01_etl_pipeline/README.md
+- [x] Read data_engineering/etl/01_etl_pipeline/README.md
 - [x] Implement ETL pipeline (fill in TODOs)
 - [x] Test and validate
 
@@ -217,12 +217,12 @@ All files include:
 ## 🔄 Files Ready for Next Phase
 
 These are pre-structured and ready to fill in:
-- `advanced_de_concepts/03_query_optimization.md` (structure exists)
-- `advanced_de_concepts/04_etl_vs_elt.md` (structure exists)
-- `projects/02_query_optimization/README.md` (ready to create)
-- `projects/03_warehouse_design/README.md` (ready to create)
-- `datasets/generate_large_dataset.py` (ready to create)
-- `scripts/benchmark_queries.py` (ready to create)
+- `data_engineering/concepts/03_query_optimization.md` (structure exists)
+- `data_engineering/concepts/04_etl_vs_elt.md` (structure exists)
+- `data_engineering/etl/02_query_optimization/README.md` (ready to create)
+- `data_engineering/etl/03_warehouse_design/README.md` (ready to create)
+- `data_engineering/data_generation/generate_large_dataset.py` (ready to create)
+- `data_engineering/scripts/benchmark_queries.py` (ready to create)
 
 ---
 
@@ -234,19 +234,19 @@ User starts with:
 └─ LEARNING_PATH.md ──→ 4-week plan
 
 Week 1: Learning
-├─ advanced_de_concepts/01_data_modeling.md
-├─ advanced_de_concepts/02_indexing_partitioning.md
-└─ faang_interview_questions/solutions.md (Q1-Q4)
+├─ data_engineering/concepts/01_data_modeling.md
+├─ data_engineering/concepts/02_indexing_partitioning.md
+└─ python/interview_questions/solutions.md (Q1-Q4)
 
 Week 2: Building
-├─ datasets/generate_ecommerce_data.py (generate data)
-├─ projects/01_etl_pipeline/README.md (understand)
-├─ projects/01_etl_pipeline/starter/etl_pipeline.py (code)
-└─ sql/schema_mysql.sql (create tables)
+├─ data_engineering/data_generation/generate_ecommerce_data.py (generate data)
+├─ data_engineering/etl/01_etl_pipeline/README.md (understand)
+├─ data_engineering/etl/01_etl_pipeline/starter/etl_pipeline.py (code)
+└─ sql/schemas/schema_mysql.sql (create tables)
 
 Week 3-4: Practicing
-├─ faang_interview_questions/solutions.md (all questions)
-├─ projects/02-03/ (when ready)
+├─ python/interview_questions/solutions.md (all questions)
+├─ data_engineering/etl/02-03/ (when ready)
 └─ IMPLEMENTATION_SUMMARY.md (reference)
 ```
 
@@ -275,12 +275,12 @@ Week 3-4: Practicing
 | Quick start | QUICKSTART.md |
 | Study plan | LEARNING_PATH.md |
 | What's built | IMPLEMENTATION_SUMMARY.md |
-| Learn modeling | advanced_de_concepts/01_data_modeling.md |
-| Learn indexing | advanced_de_concepts/02_indexing_partitioning.md |
-| Interview prep | faang_interview_questions/solutions.md |
-| Build ETL | projects/01_etl_pipeline/README.md |
-| Generate data | datasets/generate_ecommerce_data.py |
-| Create DB | sql/schema_mysql.sql |
+| Learn modeling | data_engineering/concepts/01_data_modeling.md |
+| Learn indexing | data_engineering/concepts/02_indexing_partitioning.md |
+| Interview prep | python/interview_questions/solutions.md |
+| Build ETL | data_engineering/etl/01_etl_pipeline/README.md |
+| Generate data | data_engineering/data_generation/generate_ecommerce_data.py |
+| Create DB | sql/schemas/schema_mysql.sql |
 
 ---
 

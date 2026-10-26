@@ -9,10 +9,11 @@ venv/
 env/
 
 # Generated data and runtime logs
+data/
+**/data/
 *.csv
 *.log
 *.jsonl.gz
-section_01_python_foundations/data/
 
 # Local environment files
 .env

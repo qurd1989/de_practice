@@ -3,7 +3,7 @@
 Generate realistic e-commerce sample data for ETL pipeline practice.
 
 Usage:
-    python datasets/generate_ecommerce_data.py --rows 10000 --output data/raw/
+    python data_engineering/data_generation/generate_ecommerce_data.py --rows 10000 --output data/raw/
 
 Creates:
     - users.csv (10000 rows)

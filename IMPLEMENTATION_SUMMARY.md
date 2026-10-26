@@ -13,20 +13,20 @@
    - `QUICKSTART.md` — Get started in 5 minutes
    - Week-by-week breakdown with clear milestones
 
-### 2. **Core Concept Guides** (`advanced_de_concepts/`)
+### 2. **Core Concept Guides** (`data_engineering/concepts/`)
    - ✅ `01_data_modeling.md` — Normalization, denormalization, schema design
    - ✅ `02_indexing_partitioning.md` — Indexes, performance tuning, partitioning strategies
    - 📋 `03_query_optimization.md` — (TODO: Add next)
    - 📋 `04_etl_vs_elt.md` — (TODO: Add next)
    - 📋 `05_cdc_idempotency.md` — (TODO: Add bonus content)
 
-### 3. **Interview Questions** (`faang_interview_questions/`)
+### 3. **Interview Questions** (`python/interview_questions/`)
    - ✅ `solutions.md` — **10 detailed FAANG questions with full solutions**
      - Q1-Q4: SQL Optimization & Complex Queries
      - Q5-Q7: ETL & CDC Pipeline Design
      - Q8-Q10: System Design & Coding Challenges
 
-### 4. **Hands-On Projects** (`projects/`)
+### 4. **Hands-On Projects** (`data_engineering/etl/`)
    - ✅ `01_etl_pipeline/` — Build a complete ETL pipeline
      - README.md with business context
      - starter/ with TODOs to implement
@@ -34,12 +34,12 @@
    - 📋 `02_query_optimization/` — (TODO: Optimize slow queries)
    - 📋 `03_warehouse_design/` — (TODO: Design star schema)
 
-### 5. **Data Generation** (`datasets/`)
+### 5. **Data Generation** (`data_engineering/data_generation/`)
    - ✅ `generate_ecommerce_data.py` — Create realistic sample CSVs
      - Users, products, orders
      - Configurable scale (1K-100K+ rows)
 
-### 6. **Database Tools** (`scripts/` & `sql/`)
+### 6. **Database Tools** (`data_engineering/scripts/` & `sql/`)
    - ✅ `generate_fake_data.py` — Insert fake Faker data into MySQL/SQL Server
    - ✅ `schema_mysql.sql` — Pre-built database schema
    - ✅ `schema_mssql.sql` — SQL Server equivalent
@@ -84,18 +84,18 @@ LEARNING_PATH.md           # Then read this
 
 ### Step 4: Begin Week 1 (2-3 hours)
 ```
-Read: advanced_de_concepts/01_data_modeling.md
+Read: data_engineering/concepts/01_data_modeling.md
 Goal: Understand normalized vs denormalized schemas
 ```
 
 ### Step 5: Build Project (4-6 hours)
 ```powershell
 # Generate sample data
-python datasets/generate_ecommerce_data.py --users 10000 --output data/raw/
+python data_engineering/data_generation/generate_ecommerce_data.py --users 10000 --output data/raw/
 
 # Implement ETL pipeline
-# Edit: projects/01_etl_pipeline/starter/etl_pipeline.py
-# Run: python projects/01_etl_pipeline/starter/etl_pipeline.py
+# Edit: data_engineering/etl/01_etl_pipeline/starter/etl_pipeline.py
+# Run: python data_engineering/etl/01_etl_pipeline/starter/etl_pipeline.py
 ```
 
 ---
@@ -146,26 +146,26 @@ By end of 4 weeks, you should be able to:
 
 ### Example 1: Generate Sample Data
 ```powershell
-python datasets/generate_ecommerce_data.py --users 50000 --products 500 --orders 250000 --output data/raw/
+python data_engineering/data_generation/generate_ecommerce_data.py --users 50000 --products 500 --orders 250000 --output data/raw/
 # Output: users.csv, products.csv, orders.csv in data/raw/
 ```
 
 ### Example 2: Load into Database
 ```powershell
 # Dry-run (preview)
-python scripts/generate_fake_data.py --db mysql --host localhost --user root --password pwd --database analytics --rows 5000 --dry-run
+python data_engineering/scripts/generate_fake_data.py --db mysql --host localhost --user root --password pwd --database analytics --rows 5000 --dry-run
 
 # Real insert
-python scripts/generate_fake_data.py --db mysql --host localhost --user root --password pwd --database analytics --rows 10000 --threads 4 --confirm-target
+python data_engineering/scripts/generate_fake_data.py --db mysql --host localhost --user root --password pwd --database analytics --rows 10000 --threads 4 --confirm-target
 ```
 
 ### Example 3: Build ETL Pipeline
 ```powershell
 # Fill in TODOs in this file
-projects/01_etl_pipeline/starter/etl_pipeline.py
+data_engineering/etl/01_etl_pipeline/starter/etl_pipeline.py
 
 # Run it
-python projects/01_etl_pipeline/starter/etl_pipeline.py
+python data_engineering/etl/01_etl_pipeline/starter/etl_pipeline.py
 
 # Expected output:
 # 2024-03-15 10:30:00 - INFO - Starting ETL pipeline...
@@ -176,7 +176,7 @@ python projects/01_etl_pipeline/starter/etl_pipeline.py
 ### Example 4: Study Interview Questions
 ```powershell
 # Open and read
-faang_interview_questions/solutions.md
+python/interview_questions/solutions.md
 
 # Try Q1 (SQL Optimization):
 # 1. Read question
@@ -252,7 +252,7 @@ faang_interview_questions/solutions.md
 5. Compare with solution, understand differences
 
 ### For Mock Interviews
-1. Pick a question from `faang_interview_questions/solutions.md`
+1. Pick a question from `python/interview_questions/solutions.md`
 2. Set timer for 45 min (SQL) or 60 min (coding)
 3. Don't look at solution
 4. Write code as if in real interview
@@ -400,11 +400,11 @@ pip install -r requirements.txt
 **What to read first:**
 1. `QUICKSTART.md` (5 min)
 2. `LEARNING_PATH.md` (5 min)
-3. `advanced_de_concepts/01_data_modeling.md` (1-2 hours)
+3. `data_engineering/concepts/01_data_modeling.md` (1-2 hours)
 
 **What to build first:**
-1. Generate data: `python datasets/generate_ecommerce_data.py`
-2. Implement ETL: `projects/01_etl_pipeline/starter/etl_pipeline.py`
+1. Generate data: `python data_engineering/data_generation/generate_ecommerce_data.py`
+2. Implement ETL: `data_engineering/etl/01_etl_pipeline/starter/etl_pipeline.py`
 
 **Questions?** Check the README in each folder.
 

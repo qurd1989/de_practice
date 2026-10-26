@@ -14,16 +14,16 @@
 Focus: Understand the fundamentals deeply
 
 **Monday-Tuesday:** Read core concepts (2-3 hours)
-- [ ] `advanced_de_concepts/01_data_modeling.md` — Understand schemas, normalization, relationships
-- [ ] `advanced_de_concepts/02_indexing_partitioning.md` — Why indexes matter, types, trade-offs
+- [ ] `data_engineering/concepts/01_data_modeling.md` — Understand schemas, normalization, relationships
+- [ ] `data_engineering/concepts/02_indexing_partitioning.md` — Why indexes matter, types, trade-offs
 
 **Wednesday-Thursday:** Read more concepts (2-3 hours)
-- [ ] `advanced_de_concepts/03_query_optimization.md` — EXPLAIN plans, execution strategies
-- [ ] `advanced_de_concepts/04_etl_vs_elt.md` — Batch vs streaming, data pipelines
+- [ ] `data_engineering/concepts/03_query_optimization.md` — EXPLAIN plans, execution strategies
+- [ ] `data_engineering/concepts/04_etl_vs_elt.md` — Batch vs streaming, data pipelines
 
 **Friday:** Study FAANG interview questions (2 hours)
-- [ ] `faang_interview_questions/sql_optimization.md` — Practice 3-4 questions
-- [ ] `faang_interview_questions/database_design.md` — Practice 3-4 questions
+- [ ] `python/interview_questions/sql_optimization.md` — Practice 3-4 questions
+- [ ] `python/interview_questions/database_design.md` — Practice 3-4 questions
 
 **Self-Check:**
 - Can you explain the difference between normalization and denormalization?
@@ -38,9 +38,9 @@ Build a complete data pipeline from source to warehouse
 **Objective:** Extract → Transform → Load data, understand data quality
 
 **Tasks:**
-1. Generate realistic multi-table dataset using `datasets/generate_ecommerce_data.py`
+1. Generate realistic multi-table dataset using `data_engineering/data_generation/generate_ecommerce_data.py`
 2. Create raw data files (CSV)
-3. Implement ETL pipeline (`projects/01_etl_pipeline/solution/`)
+3. Implement ETL pipeline (`data_engineering/etl/01_etl_pipeline/solution/`)
    - Parse CSV files
    - Clean & validate data
    - Load into MySQL with error handling
@@ -66,8 +66,8 @@ Take a slow query and make it fast using indexes, joins, and query rewriting
 **Objective:** Understand query execution, EXPLAIN plans, optimization techniques
 
 **Tasks:**
-1. Generate large dataset (1M+ records) with `datasets/generate_large_dataset.py`
-2. Write intentionally slow queries (`projects/02_query_optimization/starter/`)
+1. Generate large dataset (1M+ records) with `data_engineering/data_generation/generate_large_dataset.py`
+2. Write intentionally slow queries (`data_engineering/etl/02_query_optimization/starter/`)
 3. Analyze with EXPLAIN plans
 4. Optimize:
    - Add strategic indexes
@@ -133,13 +133,13 @@ python -c "import mysql.connector; print('MySQL OK')"
 ### First Time Setup
 ```powershell
 # Create database schema
-mysql -h localhost -u root -p < sql/schema_mysql.sql
+mysql -h localhost -u root -p < sql/schemas/schema_mysql.sql
 
 # Generate sample data
-python datasets/generate_ecommerce_data.py --rows 10000
+python data_engineering/data_generation/generate_ecommerce_data.py --rows 10000
 
 # Run first project
-cd projects/01_etl_pipeline
+cd data_engineering/etl/01_etl_pipeline
 python starter/etl_pipeline.py --dry-run
 ```
 
@@ -148,7 +148,7 @@ python starter/etl_pipeline.py --dry-run
 ## 📚 Learning Resources Structure
 
 ```
-projects/
+data_engineering/etl/
 ├── 01_etl_pipeline/
 │   ├── README.md              # Problem statement, learning goals
 │   ├── starter/               # Skeleton code with TODOs
@@ -231,9 +231,9 @@ By end of Week 4, you should be able to:
 
 ## 🔗 Next Steps
 
-1. **Read:** Start with `advanced_de_concepts/01_data_modeling.md`
-2. **Explore:** Check out `faang_interview_questions/` for realistic scenarios
-3. **Code:** Begin `projects/01_etl_pipeline/` by Week 2
+1. **Read:** Start with `data_engineering/concepts/01_data_modeling.md`
+2. **Explore:** Check out `python/interview_questions/` for realistic scenarios
+3. **Code:** Begin `data_engineering/etl/01_etl_pipeline/` by Week 2
 4. **Practice:** Work through questions; time yourself on project solutions
 5. **Iterate:** Revisit concepts as you encounter them in projects
 

@@ -78,7 +78,7 @@ CREATE TABLE orders (
 
 ### Generate Sample Data
 ```python
-# Run: python datasets/generate_ecommerce_data.py
+# Run: python data_engineering/data_generation/generate_ecommerce_data.py
 # This creates CSV files in data/raw/
 ```
 
@@ -86,7 +86,7 @@ CREATE TABLE orders (
 
 ## Part 2: Your Task (STARTER)
 
-Create `projects/01_etl_pipeline/starter/etl_pipeline.py` with these TODOs:
+Create `data_engineering/etl/01_etl_pipeline/starter/etl_pipeline.py` with these TODOs:
 
 ```python
 import pandas as pd
@@ -208,7 +208,7 @@ Before submitting, verify:
 
 **Run test:**
 ```powershell
-python projects/01_etl_pipeline/starter/etl_pipeline.py
+python data_engineering/etl/01_etl_pipeline/starter/etl_pipeline.py
 ```
 
 **Expected output:**

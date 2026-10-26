@@ -31,7 +31,7 @@ CREATE DATABASE analytics;
 USE analytics;
 
 -- Load schema
-SOURCE sql/schema_mysql.sql;
+SOURCE sql/schemas/schema_mysql.sql;
 ```
 
 ---
@@ -42,17 +42,17 @@ SOURCE sql/schema_mysql.sql;
 **Goal:** Understand fundamental data engineering concepts
 
 **Read these guides (in order):**
-1. `advanced_de_concepts/01_data_modeling.md` (1-2 hours)
+1. `data_engineering/concepts/01_data_modeling.md` (1-2 hours)
    - Learn normalized vs denormalized schemas
    - Understand entities, relationships, keys
    - Practice the design exercise at the end
 
-2. `advanced_de_concepts/02_indexing_partitioning.md` (1-2 hours)
+2. `data_engineering/concepts/02_indexing_partitioning.md` (1-2 hours)
    - Learn why indexes matter for query performance
    - Understand when to add indexes vs partition
    - Study the FAANG question at the end
 
-3. Study `faang_interview_questions/solutions.md` Categories 1-2 (SQL + Pipelines)
+3. Study `python/interview_questions/solutions.md` Categories 1-2 (SQL + Pipelines)
    - Q1: SQL Optimization (30 min)
    - Q2: Complex JOINs (30 min)
    - Q5: ETL Design (30 min)
@@ -70,23 +70,23 @@ SOURCE sql/schema_mysql.sql;
 **Steps:**
 1. Generate sample data:
    ```powershell
-   python datasets/generate_ecommerce_data.py --users 10000 --output data/raw/
+   python data_engineering/data_generation/generate_ecommerce_data.py --users 10000 --output data/raw/
    ```
 
 2. Read the project description:
    ```
-   projects/01_etl_pipeline/README.md
+   data_engineering/etl/01_etl_pipeline/README.md
    ```
 
 3. Write your ETL pipeline:
    ```powershell
    # Edit this file and implement all TODOs
-   projects/01_etl_pipeline/starter/etl_pipeline.py
+   data_engineering/etl/01_etl_pipeline/starter/etl_pipeline.py
    ```
 
 4. Test it:
    ```powershell
-   python projects/01_etl_pipeline/starter/etl_pipeline.py
+   python data_engineering/etl/01_etl_pipeline/starter/etl_pipeline.py
    ```
 
 5. Verify:
@@ -109,10 +109,10 @@ SOURCE sql/schema_mysql.sql;
 **Steps:**
 1. Create a large dataset:
    ```powershell
-   python datasets/generate_ecommerce_data.py --users 100000 --orders 500000
+   python data_engineering/data_generation/generate_ecommerce_data.py --users 100000 --orders 500000
    ```
 
-2. Read `projects/02_query_optimization/README.md` (when I create it)
+2. Read `data_engineering/etl/02_query_optimization/README.md` (when I create it)
 
 3. Write slow queries, then optimize them:
    ```sql
@@ -162,7 +162,7 @@ CREATE TABLE fact_orders (
 
 ## 🎯 Practice FAANG Interview Questions
 
-Open `faang_interview_questions/solutions.md` and practice these (in order):
+Open `python/interview_questions/solutions.md` and practice these (in order):
 
 ### Tier 1: Warm-up (30 min each)
 - Q1: SQL Optimization
@@ -195,17 +195,17 @@ de_practice/
 ├── README_FAKER.md                           ← Faker guide (already done)
 ├── requirements.txt                          ← Dependencies
 │
-├── advanced_de_concepts/
+├── data_engineering/concepts/
 │   ├── 01_data_modeling.md                   ← Week 1
 │   ├── 02_indexing_partitioning.md           ← Week 1
 │   ├── 03_query_optimization.md              ← Week 3 (TODO)
 │   ├── 04_etl_vs_elt.md                      ← Week 1 (TODO)
 │   ├── 05_cdc_idempotency.md                 ← Bonus (TODO)
 │
-├── faang_interview_questions/
+├── python/interview_questions/
 │   └── solutions.md                          ← 10 detailed questions + solutions
 │
-├── projects/
+├── data_engineering/etl/
 │   ├── 01_etl_pipeline/
 │   │   ├── README.md                         ← Project description
 │   │   ├── starter/
@@ -224,7 +224,7 @@ de_practice/
 │       ├── starter/
 │       └── solution/
 │
-├── datasets/
+├── data_engineering/data_generation/
 │   ├── generate_ecommerce_data.py            ← Generate sample CSVs
 │   ├── generate_large_dataset.py             ← For optimization practice (TODO)
 │   └── generate_events_data.py               ← For real-time projects (TODO)
@@ -233,7 +233,7 @@ de_practice/
 │   ├── schema_mysql.sql                      ← Database schema
 │   └── schema_mssql.sql                      ← SQL Server schema
 │
-└── scripts/
+└── data_engineering/scripts/
     ├── generate_fake_data.py                 ← Insert fake data into DB
     └── benchmark_queries.py                  ← Measure query performance (TODO)
 ```
@@ -245,24 +245,24 @@ de_practice/
 ### Generate Sample Data
 ```powershell
 # Small (for quick testing)
-python datasets/generate_ecommerce_data.py --users 1000 --products 100 --orders 5000 --output data/raw/
+python data_engineering/data_generation/generate_ecommerce_data.py --users 1000 --products 100 --orders 5000 --output data/raw/
 
 # Large (for optimization practice)
-python datasets/generate_ecommerce_data.py --users 100000 --products 1000 --orders 500000 --output data/raw/
+python data_engineering/data_generation/generate_ecommerce_data.py --users 100000 --products 1000 --orders 500000 --output data/raw/
 ```
 
 ### Load Data into Database
 ```powershell
 # MySQL: Insert 10K fake users
-python scripts/generate_fake_data.py --db mysql --host localhost --user root --password pwd --database analytics --rows 10000 --dry-run
+python data_engineering/scripts/generate_fake_data.py --db mysql --host localhost --user root --password pwd --database analytics --rows 10000 --dry-run
 
 # Real insert
-python scripts/generate_fake_data.py --db mysql --host localhost --user root --password pwd --database analytics --rows 10000 --confirm-target
+python data_engineering/scripts/generate_fake_data.py --db mysql --host localhost --user root --password pwd --database analytics --rows 10000 --confirm-target
 ```
 
 ### Run ETL Pipeline
 ```powershell
-python projects/01_etl_pipeline/starter/etl_pipeline.py
+python data_engineering/etl/01_etl_pipeline/starter/etl_pipeline.py
 ```
 
 ---
@@ -360,7 +360,7 @@ This learning environment has everything you need to become interview-ready. The
 4. ✅ **Review & iterate** (All weeks)
 
 **Start now:**
-1. Read `advanced_de_concepts/01_data_modeling.md` (1-2 hours)
+1. Read `data_engineering/concepts/01_data_modeling.md` (1-2 hours)
 2. Answer the practice exercise at the end
 3. Move to the next concept
 
