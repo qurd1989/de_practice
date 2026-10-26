@@ -1,0 +1,20 @@
+# IDE metadata
+.idea/
+
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Generated data and runtime logs
+*.csv
+*.log
+*.jsonl.gz
+section_01_python_foundations/data/
+
+# Local environment files
+.env
+.env.*
+!.env.example
